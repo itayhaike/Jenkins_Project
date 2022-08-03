@@ -8,12 +8,12 @@ pipeline {
         } 
       }
 
-      stage('All') {
+      stage('ALL') {
           steps {
 		  echo 'The project in>>> ${WORKSPACE}'
 		  echo 'You are>>> ${USER}'
 	        script {
-	 	    if (env.LANGUAGE == 'All') {
+	 	    if (env.LANGUAGE == 'ALL') {
                 	echo 'All languages are choosen'
                 	echo  'Running C++ code'
                 	sh 'cat C.c'
