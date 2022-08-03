@@ -10,8 +10,8 @@ pipeline {
 
       stage('ALL') {
           steps {
-		  echo 'The project in>>> ${WORKSPACE}'
-		  echo 'You are>>> ${USER}'
+		  echo 'The project in>>>' ${WORKSPACE}
+		  echo 'You are>>>' ${USER}
 	        script {
 	 	    if (env.LANGUAGE == 'ALL') {
                 	echo 'All languages are choosen'
