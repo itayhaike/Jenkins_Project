@@ -10,8 +10,8 @@ pipeline {
 
       stage('ALL') {
           steps {
-		 
 	        script {
+			sh 'echo "You are in ${WORKSPACE}"'
 	 	    if (env.LANGUAGE == 'ALL') {
                 	echo 'All languages are choosen'
                 	echo  'Running C++ code'
