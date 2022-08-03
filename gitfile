@@ -10,7 +10,7 @@ pipeline {
       stage('ALL') {
          steps {
             echo 'Compilation process..'
-            sh '''
+                 sh '''
                 echo "The Build is started"
 				        echo "Build BASH...."
 			         	cat ./BASH.sh
@@ -19,10 +19,8 @@ pipeline {
 	        			echo "Build c++...."
 	        			cat ./C.c
 		        		echo "Printd all scripst"
-            sh '''
-                echo "Running bin file"
-                
-            '''
+                        echo "Running bin file"
+             '''
          }
       }
       stage('Execute python script') {
