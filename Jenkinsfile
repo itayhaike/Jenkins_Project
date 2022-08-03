@@ -10,7 +10,7 @@ pipeline {
          steps {
 			sh '''
 			    cd 
-				if [ ${LANGUAGE} == "ALL" ]; then
+				if [ ${LANGUAGE} == ${ALL} ]; then
 				echo "The Build is started"
 				echo "Build BASH...."
 				cat ./BASH.sh
