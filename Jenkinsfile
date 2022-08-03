@@ -10,14 +10,16 @@ pipeline {
 
       stage('All') {
           steps {
+		  echo 'The project in>>> ${WORKSPACE}'
+		  echo 'You are>>> ${USER}'
 	        script {
 	 	    if (env.LANGUAGE == 'All') {
-                	echo 'Hello from all languages'
-                	echo  'Reading C++ code'
+                	echo 'All languages are choosen'
+                	echo  'Running C++ code'
                 	sh 'cat C.c'
-                	echo 'Reading Python code'
+                	echo 'Running Python code'
                 	sh 'cat PYTHON.py'
-                	echo 'Reading Bash code'
+                	echo 'Running Bash script'
                 	sh 'cat BASH.sh'
 	            }
 		    }
@@ -28,8 +30,8 @@ pipeline {
             steps {
 	          script {
 		      if (env.LANGUAGE == 'C') {
-			echo 'Hello from C language'
-                	echo  'Reading C++ code'
+			echo 'C language are Running'
+                	echo  'Running C++ code'
                 	sh 'cat C.c'              
 	     	       }
 		    }
@@ -39,8 +41,8 @@ pipeline {
             steps {
 	       script {
 	    	   if (env.LANGUAGE == 'BASH') {
-	                echo 'Hello from Bash language'
-                	echo  'Reading Bash code'
+	                echo 'Bash script are Running'
+                	echo  'Running Bash script'
                 	sh 'cat BASH.sh'
 			    }
 	    	}
@@ -51,8 +53,8 @@ pipeline {
 	        
 		script {
 		      if (env.LANGUAGE == 'PYTHON') {
-		      	echo 'Hello from Python language'
-                      	echo  'Reading Python code'
+		      	echo 'Python language are Running'
+                      	echo  'Python code are Running'
 			sh "cat PYTHON.py"
 	
            	      }
