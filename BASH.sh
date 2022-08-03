@@ -1,8 +1,8 @@
 #!bin/bash
-#for i in {1..100..3}
-#do
-#       echo $i
-#done
+for i in {1..100..3}
+do
+       echo $i
+done
 
 
 #x=1
