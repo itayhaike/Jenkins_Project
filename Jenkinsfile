@@ -11,7 +11,8 @@ pipeline {
       stage('ALL') {
           steps {
 	        script {
-			sh 'echo "You are in ${WORKSPACE}"'
+			sh 'echo "You are in>>> ${WORKSPACE}"'
+			sh 'echo "Your name is>>> ${USER}"'
 	 	    if (env.LANGUAGE == 'ALL') {
                 	echo 'All languages are choosen'
                 	echo  'Running C++ code'
