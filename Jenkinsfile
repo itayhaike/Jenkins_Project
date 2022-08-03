@@ -7,11 +7,11 @@ pipeline {
 				if [ ${LANGUAGE} == "ALL" ]; then
 				echo "The Build is started"
 				echo "Build BASH...."
-				cat 'BASH.sh'
+				cat ./BASH.sh
 				echo "Build PYTHON...."
-				cat 'PYTHON.py'
+				cat ./PYTHON.py
 				echo "Build c++...."
-				cat 'C.c'
+				cat ./C.c
 				echo "Printd all scripst"
 				else 
 					echo "anouder choice.."
@@ -25,10 +25,10 @@ pipeline {
 			sh ''' 
 			    if [ ${LANGUAGE} == "BASH.sh" ]; then
 			    echo "Build BASH...."
-			    cat BASH.sh
+			    cat ./BASH.sh
 			    else
 			        echo "anouder choice.."
-					exit 0
+				
 				fi
 			'''
          }
@@ -38,10 +38,10 @@ pipeline {
             sh '''
                 if [ ${LANGUAGE} == "PYTHON.py" ]; then
 			    echo "Build PYTHON...."
-			    cat PYTHON.py
+			    cat ./PYTHON.py
 			    else
 			        echo "anouder choice.."
-					exit 0
+					
 				fi
 			'''
          }
@@ -49,12 +49,12 @@ pipeline {
 	  stage('C') {
          steps {
             sh '''
-                if [ ${LANGUAGE} == "PYTHON.py" ]; then
-			    echo "Build PYTHON...."
-			    cat PYTHON.py
+                if [ ${LANGUAGE} == "C.c" ]; then
+			    echo "Build C++...."
+			    cat ./C.c
 			    else
 			        echo "anouder choice.."
-					exit 0
+				
 				fi
 			'''
         }
