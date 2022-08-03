@@ -1,9 +1,15 @@
 pipeline {
    agent any
    stages {
+       stage('Clone Sources') {
+        steps {
+          checkout scm
+        } 
+      }
       stage('BUILD ALL') {
          steps {
 			sh '''
+			    cd 
 				if [ ${LANGUAGE} == "ALL" ]; then
 				echo "The Build is started"
 				echo "Build BASH...."
@@ -17,6 +23,7 @@ pipeline {
 					echo "anouder choice.."
 					
 				fi
+				echo ${WORKSPACE}
 			'''
          }
       }
