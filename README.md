@@ -9,7 +9,7 @@ If you choose python the pipeline will execute only stages of python
 If you choose bash the pipeline will execute only stages of bash.
 All other scripts execution has to be skipped in this cases.
 The pipeline should include minimum 3-4 stages. More will be appreciated.
-To add log files algorithm like on file Jenkinsfile_adv
+To add log files algorithm like on file Jenkinsfile_adv.
 
 To create an image of your VM and to notify which pipeline name to run 
 
