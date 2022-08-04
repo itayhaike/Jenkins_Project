@@ -1,0 +1,54 @@
+pipeline {
+   agent any
+   
+   stages {
+      stage('Clone Sources') {
+        steps {
+          checkout scm
+        } 
+      }
+
+      stage('ENTRY') {
+          steps {
+	        script {
+			sh 'echo "You are in>>> ${WORKSPACE}"'
+			sh 'echo "Your name is>>> ${USER}"'
+		    }
+		}            
+               
+    }
+	  stage('C') {
+            steps {
+	          script {
+		      if (env.LANGUAGE == 'C' ||  env.LANGUAGE == 'ALL') {
+                	echo  'Running C++ code'
+                	sh 'cat C.c'              
+	     	       }
+		    }
+		}                 
+    }
+	  stage('Bash') {
+            steps {
+	       script {
+	    	   if (env.LANGUAGE == 'BASH' ||  env.LANGUAGE == 'ALL') {
+                	echo  'Running Bash script'
+                	sh 'cat BASH.sh'
+			    }
+	    	}
+        }
+    }
+         stage('Python') { 
+            steps {
+	        
+		    script {
+		      if (env.LANGUAGE == 'PYTHON' ||  env.LANGUAGE == 'ALL') {
+              echo  'Python code are Running'
+			        sh "cat PYTHON.py"
+	
+           	      }
+	         }
+            }   
+        } 
+	  
+    }
+}
