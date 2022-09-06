@@ -12,11 +12,3 @@ The pipeline should include minimum 3-4 stages. More will be appreciated.
 To add log files algorithm like on file Jenkinsfile_adv.
 
 To create an image of your VM and to notify which pipeline name to run 
-
-2) For those people who is not familiar with Git. 
-To integrate with my repository
-https://github.com/Levintovich/JenkinsCourse.git for using scripts.
-Other scripts you need to keep at the slave node and execute them.
-The pipeline should be run once an hour. 
-
-running python script <name> - running C exe file <name> - running bash script
